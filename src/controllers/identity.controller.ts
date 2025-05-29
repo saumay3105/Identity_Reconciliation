@@ -1,9 +1,22 @@
 import { Request, Response } from 'express';
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient, Contact } from '@prisma/client';
 import { consolidateContactInfo } from '../utils/contact.utils';
 
-
 const prisma = new PrismaClient();
+
+async function findRootPrimary(contactId: number): Promise<Contact> {
+  let currentContact = await prisma.contact.findUniqueOrThrow({
+    where: { id: contactId }
+  });
+
+  while (currentContact.linkPrecedence === 'secondary' && currentContact.linkedId) {
+    currentContact = await prisma.contact.findUniqueOrThrow({
+      where: { id: currentContact.linkedId }
+    });
+  }
+
+  return currentContact;
+}
 
 export const identifyContact = async (req: Request, res: Response) => {
   const { email, phoneNumber } = req.body;
@@ -17,79 +30,87 @@ export const identifyContact = async (req: Request, res: Response) => {
     const matchingContacts = await prisma.contact.findMany({
       where: {
         OR: [
-          { email: email || undefined },
-          { phoneNumber: phoneNumber || undefined }
+          ...(email ? [{ email }] : []),
+          ...(phoneNumber ? [{ phoneNumber }] : [])
         ]
       }
     });
 
     
-    let primaryContact = matchingContacts.find(c => c.linkPrecedence === "primary");
-    const secondaryContacts = matchingContacts.filter(c => c.linkPrecedence === "secondary");
-
-    
-    if (!primaryContact) {
-      const newContact = await prisma.contact.create({
-        data: {
-          email,
-          phoneNumber,
-          linkPrecedence: "primary"
-        }
+    if (matchingContacts.length === 0) {
+      const newPrimary = await prisma.contact.create({
+        data: { email, phoneNumber, linkPrecedence: 'primary' }
       });
-      return res.json(consolidateContactInfo([newContact], []));
+      return res.json({ contact: consolidateContactInfo([newPrimary], []) });
     }
 
     
-    const otherPrimaries = matchingContacts.filter(c => 
-      c.linkPrecedence === "primary" && c.id !== primaryContact?.id
+    const rootPrimaries = await Promise.all(
+      matchingContacts.map(c => findRootPrimary(c.id))
     );
 
-    if (otherPrimaries.length > 0) {
-      const oldestPrimary = [primaryContact, ...otherPrimaries].sort(
-        (a, b) => a.createdAt.getTime() - b.createdAt.getTime()
-      )[0];
+    
+    const uniquePrimaries = Array.from(new Map(
+      rootPrimaries.map(p => [p.id, p])
+    ).values()).sort((a, b) => a.createdAt.getTime() - b.createdAt.getTime());
+    
+    const mainPrimary = uniquePrimaries[0];
 
+   
+    if (uniquePrimaries.length > 1) {
       await prisma.contact.updateMany({
-        where: {
-          id: {
-            in: [primaryContact.id, ...otherPrimaries.map(p => p.id)]
-          }
-        },
+        where: { id: { in: uniquePrimaries.slice(1).map(p => p.id) } },
         data: {
-          linkedId: oldestPrimary.id,
-          linkPrecedence: "secondary"
+          linkedId: mainPrimary.id,
+          linkPrecedence: 'secondary',
+          updatedAt: new Date()
         }
       });
-
-      primaryContact = oldestPrimary;
     }
 
-    if ((email && !matchingContacts.some(c => c.email === email)) ||
-        (phoneNumber && !matchingContacts.some(c => c.phoneNumber === phoneNumber))) {
+    
+    const existingLinked = await prisma.contact.findMany({
+      where: { 
+        OR: [
+          { id: mainPrimary.id },
+          { linkedId: mainPrimary.id }
+        ]
+      }
+    });
+
+   
+    const exactMatch = existingLinked.find(c => 
+      c.email === email && c.phoneNumber === phoneNumber
+    );
+
+    
+    if (!exactMatch) {
       await prisma.contact.create({
         data: {
           email,
           phoneNumber,
-          linkedId: primaryContact.id,
-          linkPrecedence: "secondary"
+          linkedId: mainPrimary.id,
+          linkPrecedence: 'secondary'
         }
       });
     }
 
     
-    const allContacts = await prisma.contact.findMany({
-      where: {
+    const updatedContacts = await prisma.contact.findMany({
+      where: { 
         OR: [
-          { id: primaryContact.id },
-          { linkedId: primaryContact.id }
+          { id: mainPrimary.id },
+          { linkedId: mainPrimary.id }
         ]
       }
     });
 
-    return res.json(consolidateContactInfo(
-      allContacts.filter(c => c.linkPrecedence === "primary"),
-      allContacts.filter(c => c.linkPrecedence === "secondary")
-    ));
+    return res.json({ 
+      contact: consolidateContactInfo(
+        updatedContacts.filter(c => c.linkPrecedence === 'primary'),
+        updatedContacts.filter(c => c.linkPrecedence === 'secondary')
+      )
+    });
 
   } catch (error) {
     console.error(error);
