@@ -1,0 +1,594 @@
+{
+	"info": {
+		"_postman_id": "c218d3f3-54e7-4111-8220-69a91232c51f",
+		"name": "Identity_Reconsilation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37149002"
+	},
+	"item": [
+		{
+			"name": "new_identity_creation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"heysophoners@gmail.com\",\r\n  \"phoneNumber\": \"7007931306\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://identity-reconciliation-w2rr.onrender.com/api/identify",
+					"protocol": "https",
+					"host": [
+						"identity-reconciliation-w2rr",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"identify"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"heysophoners@gmail.com\",\r\n  \"phoneNumber\": \"7007931306\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://identity-reconciliation-w2rr.onrender.com/api/identify",
+							"protocol": "https",
+							"host": [
+								"identity-reconciliation-w2rr",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"identify"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 30 May 2025 19:59:33 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "104"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"7e-PiDRCzpz9Sd20qqjauUukPToXTg\""
+						},
+						{
+							"key": "rndr-id",
+							"value": "c6e66f79-bdd9-4e84"
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "cf-cache-status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "9480cff9befb3c04-BOM"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"contact\": {\n        \"primaryContactId\": 30,\n        \"emails\": [\n            \"heysophoners@gmail.com\"\n        ],\n        \"phoneNumbers\": [\n            \"7007931306\"\n        ],\n        \"secondaryContactIds\": []\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "secondary_Id",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"heysophomers@gmail.com\",\r\n  \"phoneNumber\": \"7007931306\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://identity-reconciliation-w2rr.onrender.com/api/identify",
+					"protocol": "https",
+					"host": [
+						"identity-reconciliation-w2rr",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"identify"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"heysophomers@gmail.com\",\r\n  \"phoneNumber\": \"7007931306\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://identity-reconciliation-w2rr.onrender.com/api/identify",
+							"protocol": "https",
+							"host": [
+								"identity-reconciliation-w2rr",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"identify"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 30 May 2025 20:00:14 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "111"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"99-mFNwshpkIl+f2mmpuYOc8F9Bvio\""
+						},
+						{
+							"key": "rndr-id",
+							"value": "78a8b3fb-90b0-4921"
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "cf-cache-status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "9480d0fe0f7e3c04-BOM"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"contact\": {\n        \"primaryContactId\": 30,\n        \"emails\": [\n            \"heysophomers@gmail.com\",\n            \"heysophoners@gmail.com\"\n        ],\n        \"phoneNumbers\": [\n            \"7007931306\"\n        ],\n        \"secondaryContactIds\": [\n            31\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "new_primary_req",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"aarain@gmail.com\",\r\n  \"phoneNumber\": \"8291343313\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://identity-reconciliation-w2rr.onrender.com/api/identify",
+					"protocol": "https",
+					"host": [
+						"identity-reconciliation-w2rr",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"identify"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"aarain@gmail.com\",\r\n  \"phoneNumber\": \"8291343313\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://identity-reconciliation-w2rr.onrender.com/api/identify",
+							"protocol": "https",
+							"host": [
+								"identity-reconciliation-w2rr",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"identify"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 30 May 2025 20:01:19 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "102"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"78-7R7mFogKXjx303xz1TY2YtT8uBw\""
+						},
+						{
+							"key": "rndr-id",
+							"value": "859ad640-a954-419a"
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "cf-cache-status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "9480d29e1e5bca5b-BOM"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"contact\": {\n        \"primaryContactId\": 32,\n        \"emails\": [\n            \"aarain@gmail.com\"\n        ],\n        \"phoneNumbers\": [\n            \"8291343313\"\n        ],\n        \"secondaryContactIds\": []\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "converting_new_primary_req_to_secondary",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"aarain@gmail.com\",\r\n  \"phoneNumber\": \"7007931306\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://identity-reconciliation-w2rr.onrender.com/api/identify",
+					"protocol": "https",
+					"host": [
+						"identity-reconciliation-w2rr",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"identify"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"aarain@gmail.com\",\r\n  \"phoneNumber\": \"7007931306\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://identity-reconciliation-w2rr.onrender.com/api/identify",
+							"protocol": "https",
+							"host": [
+								"identity-reconciliation-w2rr",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"identify"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 30 May 2025 20:02:48 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "131"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"bf-0hGBtrkbXluhzVsrazP3OLjUnTg\""
+						},
+						{
+							"key": "rndr-id",
+							"value": "0379a649-8bf0-46f8"
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "cf-cache-status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "9480d4bcf9c84e0d-BOM"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"contact\": {\n        \"primaryContactId\": 30,\n        \"emails\": [\n            \"aarain@gmail.com\",\n            \"heysophomers@gmail.com\",\n            \"heysophoners@gmail.com\"\n        ],\n        \"phoneNumbers\": [\n            \"7007931306\",\n            \"8291343313\"\n        ],\n        \"secondaryContactIds\": [\n            31,\n            32,\n            33\n        ]\n    }\n}"
+				},
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"aarain@gmail.com\",\r\n  \"phoneNumber\": \"7007931306\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://identity-reconciliation-w2rr.onrender.com/api/identify",
+							"protocol": "https",
+							"host": [
+								"identity-reconciliation-w2rr",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"identify"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 30 May 2025 20:02:48 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "131"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"bf-0hGBtrkbXluhzVsrazP3OLjUnTg\""
+						},
+						{
+							"key": "rndr-id",
+							"value": "0379a649-8bf0-46f8"
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "cf-cache-status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "9480d4bcf9c84e0d-BOM"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"contact\": {\n        \"primaryContactId\": 30,\n        \"emails\": [\n            \"aarain@gmail.com\",\n            \"heysophomers@gmail.com\",\n            \"heysophoners@gmail.com\"\n        ],\n        \"phoneNumbers\": [\n            \"7007931306\",\n            \"8291343313\"\n        ],\n        \"secondaryContactIds\": [\n            31,\n            32,\n            33\n        ]\n    }\n}"
+				}
+			]
+		}
+	]
+}
