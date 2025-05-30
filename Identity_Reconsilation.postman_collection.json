@@ -1,0 +1,130 @@
+{
+	"info": {
+		"_postman_id": "c218d3f3-54e7-4111-8220-69a91232c51f",
+		"name": "Identity_Reconsilation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37149002"
+	},
+	"item": [
+		{
+			"name": "new_identity_creation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"heysophoners@gmail.com\",\r\n  \"phoneNumber\": \"7007931306\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://identity-reconciliation-w2rr.onrender.com/api/identify",
+					"protocol": "https",
+					"host": [
+						"identity-reconciliation-w2rr",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"identify"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "secondary_Id",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"heysophomers@gmail.com\",\r\n  \"phoneNumber\": \"7007931306\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://identity-reconciliation-w2rr.onrender.com/api/identify",
+					"protocol": "https",
+					"host": [
+						"identity-reconciliation-w2rr",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"identify"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "new_primary_req",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"aarain@gmail.com\",\r\n  \"phoneNumber\": \"8291343313\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://identity-reconciliation-w2rr.onrender.com/api/identify",
+					"protocol": "https",
+					"host": [
+						"identity-reconciliation-w2rr",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"identify"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "converting_new_primary_req_to_secondary",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"aarain@gmail.com\",\r\n  \"phoneNumber\": \"7007931306\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://identity-reconciliation-w2rr.onrender.com/api/identify",
+					"protocol": "https",
+					"host": [
+						"identity-reconciliation-w2rr",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"identify"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
