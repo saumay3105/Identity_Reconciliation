@@ -19,7 +19,7 @@ This is my solution for the Bitespeed Identity Reconciliation backend task. Itâ€
 * Node.js + Express
 * TypeScript
 * Prisma ORM
-* PostgreSQL (I recommend Neon for dev)
+* PostgreSQL (Neon)
 
 ## How to Run
 
