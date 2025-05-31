@@ -45,6 +45,4 @@ This is my solution for the Bitespeed Identity Reconciliation backend task. Itâ€
 
 A Postman collection is included in the repo: `Identity_Reconsilation.postman_collection.json` for testing the API endpoints.
 
-## Deployment
 
-[https://identity-reconciliation-w2rr.onrender.com/api/identify](https://identity-reconciliation-w2rr.onrender.com/api/identify)
