@@ -6,7 +6,7 @@ const router = Router();
 
 router.post('/identify', async (req: Request, res: Response, next: NextFunction) => {
 	try {
-		await identifyContact(req, res);
+		await identifyContact(req, res,next);
 	} catch (error) {
 		next(error);
 	}

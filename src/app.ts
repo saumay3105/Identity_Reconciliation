@@ -1,12 +1,15 @@
 import express, { Request, Response } from "express";
 import identityRouter from "./routes/identity.route";
 import axios, { AxiosResponse } from "axios";
+import { root } from "./controllers/identity.controller";
+
 const app = express();
 
 app.use(express.json());
 
 app.use("/api", identityRouter);
 
+app.get("/", root);
 app.get("/health", (req: Request, res: Response) => {
   res.status(200).send("Server is running");
 });
