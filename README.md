@@ -4,8 +4,9 @@ This is my solution for the Bitespeed Identity Reconciliation backend task. Itâ€
 
 ## Deployment
 
-[https://identity-reconciliation-w2rr.onrender.com/api/identify](https://identity-reconciliation-w2rr.onrender.com/api/identify)- This service is currently down as I hit the free limit of Render                 
-[https://identity-reconciliation-ta37.onrender.com/api/identify](https://identity-reconciliation-ta37.onrender.com/api/identify)- Use this for now sorry for the inconvenience caused
+[https://identity-reconciliation-w2rr.onrender.com/api/identify](https://identity-reconciliation-w2rr.onrender.com/api/identify)- Primary                
+[https://identity-reconciliation-ta37.onrender.com/api/identify](https://identity-reconciliation-ta37.onrender.com/api/identify)- Backup
+
 
 ## Features
 
